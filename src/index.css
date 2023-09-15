@@ -17,7 +17,7 @@
 .footer {
   padding: 20px;
   text-align: center;
-  background-color: #4338ca;
+  background-color: #1d5d54;
   color: whitesmoke;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .top_card {
-  background-color: #4338ca;
+  background-color: #0a6179;
   color: white;
   padding: 10px 20px;
   min-width: 400px;
@@ -82,7 +82,7 @@ input {
   outline: none;
   cursor: pointer;
   padding: 10px;
-  background-color: #4338ca;
+  background-color: #148731;
   color: white;
   transition: background-color 0.3s ease;
 }
@@ -117,7 +117,7 @@ label {
 }
 
 .income {
-  background-color: #4338ca;
+  background-color: #117252;
 }
 
 .expense {
@@ -163,7 +163,7 @@ label {
 }
 
 .cancel_edit {
-  display: none;
+  /* display: none; */
   margin-top: 10px;
   background-color: #e6425e !important;
 }

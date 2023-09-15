@@ -1,16 +1,22 @@
 {
-    "transactions": [
-        {
-            "id": 1,
-            "name": "Salary from Google",
-            "type": "income",
-            "amount": 1000000
-        },
-        {
-            "id": 2,
-            "name": "Family Expenses",
-            "type": "expense",
-            "amount": 200000
-        }
-    ]
+  "transactions": [
+    {
+      "name": "Earn From Freelancing",
+      "type": "income",
+      "amount": 20000,
+      "id": 1
+    },
+    {
+      "name": "Cost for My GF",
+      "type": "expense",
+      "amount": 10000,
+      "id": 2
+    },
+    {
+      "name": "Remote Job",
+      "type": "income",
+      "amount": 80000,
+      "id": 3
+    }
+  ]
 }
