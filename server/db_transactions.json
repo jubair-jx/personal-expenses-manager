@@ -1,22 +1,22 @@
 {
   "transactions": [
     {
-      "name": "Earn From Freelancing",
+      "name": "",
+      "type": "",
+      "amount": 0,
+      "id": 4
+    },
+    {
+      "name": "facebook income",
       "type": "income",
       "amount": 20000,
-      "id": 1
+      "id": 5
     },
     {
-      "name": "Cost for My GF",
+      "name": "Invest GF",
       "type": "expense",
-      "amount": 10000,
-      "id": 2
-    },
-    {
-      "name": "Remote Job",
-      "type": "income",
-      "amount": 80000,
-      "id": 3
+      "amount": 5000,
+      "id": 6
     }
   ]
 }

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createTransactions } from "../features/transctionSlice";
+import {
+  createTransactions,
+  updateTransactions,
+} from "../features/transctionSlice";
 
 const Form = () => {
   const [name, setName] = useState("");
@@ -13,7 +16,12 @@ const Form = () => {
     (state) => state.transctionReducer
   );
   const editing = useSelector((state) => state.transctionReducer.editing);
-  console.log(editing);
+  // console.log(editing);
+  const reset = () => {
+    setName("");
+    setType("");
+    setAmount("");
+  };
   const createHandleForm = (e) => {
     e.preventDefault();
     const data = { name, type, amount: Number(amount) };
@@ -23,6 +31,7 @@ const Form = () => {
     setAmount("");
   };
   const handleCancel = () => {
+    reset();
     setEditMode(false);
   };
   useEffect(() => {
@@ -39,10 +48,27 @@ const Form = () => {
       setAmount("");
     }
   }, [editing]);
+  const updateTransactionHandle = (e) => {
+    e.preventDefault();
+    distpatch(
+      updateTransactions({
+        id: editing?.id,
+        data: {
+          name: name,
+          amount: Number(amount),
+          type: type,
+        },
+      })
+    );
+    setName("");
+    setType("");
+    setAmount("");
+    setEditMode(false);
+  };
   return (
     <div className="form">
       <h3>Add new transaction</h3>
-      <form onSubmit={createHandleForm}>
+      <form onSubmit={editMode ? updateTransactionHandle : createHandleForm}>
         <div className="form-group">
           <label htmlFor="transaction_name">Name</label>
           <input

@@ -115,10 +115,11 @@ const transactionSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(deleteTransactions.fulfilled, (state, action) => {
+        console.log(action);
         state.isError = false;
         state.isLoading = false;
         const filterDeleted = state.transctions.filter(
-          (tr) => tr.id !== action.payload
+          (tr) => tr.id !== action.meta.arg
         );
         state.transctions = filterDeleted;
       })

@@ -2,7 +2,7 @@ import React from "react";
 import edit from "../../assets/images/edit.svg";
 import deletes from "../../assets/images/delete.svg";
 import { useDispatch } from "react-redux";
-import { editActive } from "../../features/transctionSlice";
+import { deleteTransactions, editActive } from "../../features/transctionSlice";
 
 const SingleTransaction = ({ transction }) => {
   const { name, amount, type, id } = transction || {};
@@ -10,6 +10,9 @@ const SingleTransaction = ({ transction }) => {
   // console.log(data);
   const handleEditing = () => {
     dispatch(editActive(transction));
+  };
+  const handleDelete = () => {
+    dispatch(deleteTransactions(id));
   };
   return (
     <li className={`transaction ${type}`}>
@@ -19,7 +22,7 @@ const SingleTransaction = ({ transction }) => {
         <button onClick={handleEditing} className="link">
           <img className="icon" src={edit} />
         </button>
-        <button className="link">
+        <button onClick={handleDelete} className="link">
           <img className="icon" src={deletes} />
         </button>
       </div>
